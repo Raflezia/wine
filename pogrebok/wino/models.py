@@ -14,7 +14,7 @@ class grape(models.Model):
         ordering = ['-title']
 
 class type_wine(models.Model):
-    title=models.CharField(max_length=50,verbose_name='Вид вина', blank=True, null=True)
+    title=models.CharField(max_length=50,verbose_name='Вид вина')
     def __str__(self):
         return self.title
     class Meta:
@@ -30,7 +30,7 @@ class wine_sort(models.Model):
     b_year=models.DurationField(verbose_name='Время выдержки в бочках', help_text='в годах')
     bu_month=models.DurationField(verbose_name='Время выдержки в бутылках', help_text='в месяцах')
     s_grape=models.ForeignKey(grape,on_delete = models.CASCADE,verbose_name='Сорт винограда')
-    type1=models.ForeignKey(type_wine,on_delete = models.CASCADE,verbose_name='тип винограда',blank=True, null=True)
+    type1=models.ForeignKey('type_wine',on_delete = models.CASCADE,verbose_name='тип винограда',blank=True, null=True)
     def __str__(self):
         return self.title
     class Meta:
@@ -46,7 +46,7 @@ class bochka(models.Model):
     data_zapolnenya=models.DateField(verbose_name='Дата заполнения бочки')
     sort_vina=models.ForeignKey(wine_sort,on_delete = models.CASCADE,verbose_name='Сорт вина')
     def __str__(self):
-        return self.title
+        return self.mesto
     class Meta:
         verbose_name_plural = 'Бочки'
         verbose_name = 'Бочка'
