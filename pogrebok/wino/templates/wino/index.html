@@ -1,22 +1,35 @@
 {% extends 'wino/layout.html' %}
 {% block content %}
-<h1>Бочки</h1>
+<h1 style="text-align: center; color: aliceblue;"> Бочки</h1><br>
 	<div>
 		{% if bbs %}
-			{% for bb in bbs %}		
-				{{ bb.mesto }}
-				{{ bb.date_izg}}
-				{{ bb.obyem }}
-				{% if bb.pusto %}
-					<p>Бочка заполнена</p>					
-				{% else%}
-					<p>Бочка пуста</p>
-				{% endif %}
-			{% endfor %}	
+			
+				{% for bb in bbs %}	
+				<div class="shadowbox">	
+					<p style="margin-left: 20px">Расположение бочки: </p>
+					<p style="text-align: center;color: aliceblue;">{{ bb.mesto }}</p><hr>
+						<p style="margin-left: 20px">Дата изготовления бочки: 	{{ bb.date_izg}}</p>
+							<p style="margin-left: 20px">Объем: {{ bb.obyem }} л.</p>
+
+						{% if bb.pusto %}
+							<p style="margin-left: 20px">Бочка заполнена</p>
+							<p style="margin-left: 20px">Сорт вина: 	{{bb.sort_vina}}</p>
+						<p style="margin-left: 20px">Дата заполнения: 	{{bb.data_zapolnenya}}</p>				
+						{% else%}
+							<p style="margin-left: 20px">Бочка пуста</p>
+						{% endif %}
+						
+						<br>					
+					</div>
+					<br>	
+				{% endfor %}
+			
 		{% else %}
+		
 			<p>В винном погребе нет бочек...</p>
+		</div>
 		{% endif %}
-	</div>	
+	
 {% endblock %}
 
 <!-- {% block title %}

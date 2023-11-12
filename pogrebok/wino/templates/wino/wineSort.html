@@ -1,21 +1,27 @@
 {% extends 'wino/layout.html' %}
 {% block content %}
-<h1>Сорта вин</h1>	
-   
+<h1 style="text-align: center; color: aliceblue;">Сорта вин</h1>	<br>
+  
     {% for bb in sw %}
+    <div class="shadowbox">
         <div>
-            {{bb.title }}
-            {{bb.color}} 	
-            {{bb.b_year}} 
-            {{bb.bu_month}}
-            {{bb.s_grape}} 
-            {{bb.type1}}
+            <p style="text-align: center; ">Наименование сорта: </p>
+            <p style="text-align: center;color: aliceblue;">{{bb.title }}</p><hr>
+            <p style="margin-left: 20px">Цвет: {{bb.color}} </p>
+            <p style="margin-left: 20px">Время выдержки в бочках: {{bb.b_year}} года/лет</p>
+            <p style="margin-left: 20px">Время выдержки в бутылках: {{bb.bu_month}} месяца/месяцев</p>
+            <p style="margin-left: 20px">Наименование сорта винограда: {{bb.s_grape}} </p>
+            <p style="margin-left: 20px">Тип вина: {{bb.type1}}</p>
         </div>
-        {% for b in bbs %}
-            {% if bb.pk == b.sort_vina_id %} 
-                {{b.mesto}}
-            {% endif %} 
-        {% endfor %}
+        
+            {% for b in bbs %}
+                {% if bb.pk == b.sort_vina_id %} 
+                <p style="text-align: center">Бочка с вином расположена : {{b.mesto}}</p>                    
+                {% endif %} 
+            {% endfor %}       
+        </div>
+        <br> 
+        <hr>
     {% endfor %}	
     
 {% endblock %}
