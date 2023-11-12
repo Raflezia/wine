@@ -1,0 +1,13 @@
+{% extends 'wino/layout.html' %}
+{% block content %}
+<h1>Бочки</h1>
+	{% for bb in bbs %}
+	<div>
+		<h2>{{ bb.mesto }}</h2>		
+	</div>
+	{% endfor %}	
+	
+{% endblock %}
+
+<!-- {% block title %}
+{% endblock %} -->

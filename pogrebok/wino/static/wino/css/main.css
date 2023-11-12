@@ -1,0 +1,56 @@
+
+body {
+    background-color: #FF7373;
+    
+   
+    /* background-image: url('wino/img/istockphoto-153996238-612x612.jpg'); */
+    /* filter: blur(5px); Размытие */
+
+}
+aside {
+    float:left;
+    background:#F5F5F5;
+    width:20%;
+    padding:2.5%;
+    height:100vh;
+    color:#111010;
+    border-right: 5px solid #4d4d4d;
+}
+aside img {
+    width:180px;
+    float: left;
+}
+aside .logo {
+     
+    font-size: 40px;
+    margin-left:10px;
+    font-weight: bold;
+    position:relative;
+    top:-50px;
+}
+aside h3 {
+    margin-top: 5px;
+    margin-left:35px;
+    font-size: 20px;
+}
+
+aside ul {
+    list-style: none;
+}
+aside ul li i {
+    width: 25px;
+}
+aside ul li {
+    color:#111010;
+    display: block;
+    margin-top: 20px;
+    margin-left: 10px;
+    transition: transform .6s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color:#eb5959;
+    text-decoration: none;
+    transform: scale(1.25);
+}
+
