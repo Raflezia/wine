@@ -1,12 +1,22 @@
 {% extends 'wino/layout.html' %}
 {% block content %}
 <h1>Бочки</h1>
-	{% for bb in bbs %}
 	<div>
-		<h2>{{ bb.mesto }}</h2>		
-	</div>
-	{% endfor %}	
-	
+		{% if bbs %}
+			{% for bb in bbs %}		
+				{{ bb.mesto }}
+				{{ bb.date_izg}}
+				{{ bb.obyem }}
+				{% if bb.pusto %}
+					<p>Бочка заполнена</p>					
+				{% else%}
+					<p>Бочка пуста</p>
+				{% endif %}
+			{% endfor %}	
+		{% else %}
+			<p>В винном погребе нет бочек...</p>
+		{% endif %}
+	</div>	
 {% endblock %}
 
 <!-- {% block title %}

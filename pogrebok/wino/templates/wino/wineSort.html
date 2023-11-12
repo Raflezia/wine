@@ -1,0 +1,24 @@
+{% extends 'wino/layout.html' %}
+{% block content %}
+<h1>Сорта вин</h1>	
+   
+    {% for bb in sw %}
+        <div>
+            {{bb.title }}
+            {{bb.color}} 	
+            {{bb.b_year}} 
+            {{bb.bu_month}}
+            {{bb.s_grape}} 
+            {{bb.type1}}
+        </div>
+        {% for b in bbs %}
+            {% if bb.pk == b.sort_vina_id %} 
+                {{b.mesto}}
+            {% endif %} 
+        {% endfor %}
+    {% endfor %}	
+    
+{% endblock %}
+
+
+

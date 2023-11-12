@@ -42,7 +42,7 @@ class bochka(models.Model):
     mesto=models.CharField(max_length=50,verbose_name='')
     date_izg=models.DateField(verbose_name='Дата изготовления')   
     obyem=models.FloatField(verbose_name='Объем')
-    pusto=models.BooleanField(verbose_name='Пустота')
+    pusto=models.BooleanField(verbose_name='Бочка заполнена')
     data_zapolnenya=models.DateField(verbose_name='Дата заполнения бочки')
     sort_vina=models.ForeignKey(wine_sort,on_delete = models.CASCADE,verbose_name='Сорт вина')
     def __str__(self):
