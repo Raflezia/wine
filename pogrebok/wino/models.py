@@ -45,7 +45,7 @@ class wine_sort(models.Model):
         verbose_name_plural = 'Сорта вин'
 
         verbose_name = 'Сорт вина'
-        ordering = ['-title']
+        
 
 class bochka(models.Model):
     mesto=models.CharField(max_length=50,verbose_name='Местоположение бочки', help_text='Введите комнату и стеллаж',default='Комната:   |   Стеллаж: ')
@@ -59,4 +59,5 @@ class bochka(models.Model):
     class Meta:
         verbose_name_plural = 'Бочки'
         verbose_name = 'Бочка'
-        ordering = ['-data_zapolnenya']
+        ordering = ['-pusto']
+        
