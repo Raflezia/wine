@@ -37,8 +37,8 @@ class wine_sort(models.Model):
     color=models.CharField(max_length=50,choices=colors,verbose_name='Цвет')
     b_year=models.IntegerField(verbose_name='Время выдержки в бочках', help_text='в годах')
     bu_month=models.IntegerField(verbose_name='Время выдержки в бутылках', help_text='в месяцах')
-    s_grape=models.ForeignKey(grape,on_delete = models.DO_NOTHING,verbose_name='Сорт винограда')
-    type1=models.ForeignKey('type_wine',on_delete = models.DO_NOTHING,verbose_name='Тип винограда',null=True)
+    s_grape=models.ForeignKey(grape,on_delete = models.CASCADE,verbose_name='Сорт винограда',null=True)
+    type1=models.ForeignKey('type_wine',on_delete = models.CASCADE,verbose_name='Тип винограда',null=True)
     def __str__(self):
         return self.title
     class Meta:
@@ -53,7 +53,7 @@ class bochka(models.Model):
     obyem=models.FloatField(verbose_name='Объем в литрах')
     pusto=models.BooleanField(verbose_name='Бочка заполнена',help_text='Поставьте галочку, если бочка не пуста')
     data_zapolnenya=models.DateField(verbose_name='Дата заполнения бочки',null=True,blank=True)
-    sort_vina=models.ForeignKey(wine_sort,on_delete = models.DO_NOTHING,null=True,blank=True,verbose_name='Сорт вина',help_text='Выберите сорт вина')
+    sort_vina=models.ForeignKey(wine_sort,on_delete = models.CASCADE,null=True,blank=True,verbose_name='Сорт вина',help_text='Выберите сорт вина')
     def __str__(self):
         return self.mesto
     class Meta:

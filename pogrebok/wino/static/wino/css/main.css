@@ -1,6 +1,6 @@
 
 body {
-    background-color: #FF7373;
+    background-color: #800000;
     
 }
 
@@ -11,8 +11,9 @@ p {
 .shadowbox {
     display: block;  
     float:center;  
-    border: 1px solid #F5F5F5;
-    box-shadow: 8px 8px 5px #eeb5b5;
+    background-color: #F5F5F5;
+    border: 1px solid #4d4d4d;
+    box-shadow: 8px 8px 5px #f09b9b;
     margin-left: 300px;
     margin-right: 50px;
   }
@@ -28,6 +29,10 @@ aside {
 aside img {
     width:180px;
     float: left;
+}
+.imgmain {
+    width:180px;
+    float: right;
 }
 aside .logo {
      
@@ -45,6 +50,7 @@ aside h3 {
 
 aside ul {
     list-style: none;
+    text-decoration: none;
 }
 aside ul li i {
     width: 25px;
@@ -52,9 +58,11 @@ aside ul li i {
 aside ul li {
     color:#111010;
     display: block;
-    margin-top: 20px;
-    margin-left: 10px;
+    margin-top: 15px;
+    margin-left: 5px;
     transition: transform .6s ease;
+    font-size: 25px;
+    font-family: URW Chancery L, cursive;
 }
 
 aside ul li:hover, aside ul a:hover {
