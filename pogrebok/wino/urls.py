@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 urlpatterns=[
     # path('',index),
-    path('',views.index,name='home'),#круглые скобки не нужны. нужно лишь обратиться без его выполенния поэтому без ()
+    path('',views.index,name='home'),
     path('sortofwine/',views.sortW,name='sortofwine'),
     path('barrels/',views.barrelwine,name='barrelofwine'),
 ]

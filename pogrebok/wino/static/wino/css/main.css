@@ -1,6 +1,6 @@
 
 body {
-    background-color: #800000;
+    background-color: rgb(243, 194, 194);
     
 }
 
@@ -30,10 +30,7 @@ aside img {
     width:180px;
     float: left;
 }
-.imgmain {
-    width:180px;
-    float: right;
-}
+
 aside .logo {
      
     font-size: 40px;

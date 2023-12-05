@@ -16,6 +16,7 @@ def index(request):
 def sortW(request):   
     ws=wine_sort.objects.order_by('-title')
     bbs = bochka.objects.order_by('-mesto')
+    b=0
     return render(request, "wino/wineSort.html",{'sw': ws,'bbs':bbs})
 
 def barrelwine(request):   
@@ -26,4 +27,4 @@ def barrelwine(request):
 #     return HttpResponse('')
 
 # def index(request):
-#     return render(request,'wino/index.html') # использваоние render
+#     return render(request,'wino/index.html') 

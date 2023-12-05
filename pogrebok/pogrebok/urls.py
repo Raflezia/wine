@@ -5,8 +5,8 @@ from django.urls import path, include
 from wino import views
 
 urlpatterns = [
-    path('', include('wino.urls')), #url отслеживание адресов
+    path('', include('wino.urls')), 
     path('admin/', admin.site.urls),
     # path("htmlk/", views.index),
-    #path('',include('wino.urls'))#main страница отслеживание. передача прав приложению погребок
+    #path('',include('wino.urls'))
 ]+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
